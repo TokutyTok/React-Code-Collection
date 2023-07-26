@@ -1,20 +1,12 @@
-import { createBrowserRouter } from 'react-router-dom'
+import React from 'react'
+import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Demo } from '../src/pages/Demo'
 
-export const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Demo />,
-        errorElement: <div>error</div>,
-        children: [
-            {
-                path: 'demo',
-                element: <div>demo</div>,
-            },
-            {
-                path: 'demo/:id',
-                element: <div>demo1</div>,
-            },
-        ],
-    },
-])
+export const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path={'/'} element={<Demo />} errorElement={<div>error</div>}>
+            <Route path={'demo'} element={<div>demo</div>} />
+            <Route path={'demo/:id'} element={<div>demo1</div>} />
+        </Route>
+    )
+)
