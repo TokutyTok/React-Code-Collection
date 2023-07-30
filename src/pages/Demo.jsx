@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link, Outlet, useLoaderData } from 'react-router-dom'
+import { Form, Link, Outlet } from 'react-router-dom'
 import {} from '../css/demo.css'
 
 export const Demo = () => {
-    const { users } = useLoaderData()
     return (
         <div className='main'>
             <div className='side'>
@@ -15,13 +14,10 @@ export const Demo = () => {
                 </div>
             </div>
             <div className='content'>
-                {users.map((value) => {
-                    return (
-                        <div key={value.id}>
-                            id:{value.id} name:{value.name}
-                        </div>
-                    )
-                })}
+                <Form method='post'>
+                    <input placeholder='id' aria-label='id' type='text' name='id' />
+                    <button type='submit'>userDetail</button>
+                </Form>
                 <Outlet />
             </div>
         </div>
