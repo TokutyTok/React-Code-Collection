@@ -1,0 +1,38 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+}
+
+.side {
+    background-color: #eeeeee;
+    width: 150px;
+    height: 100vh;
+    text-align: center;
+}
+
+.content {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+}
+
+.link a {
+    text-decoration: none;
+}
+
+.link:hover a {
+    text-decoration: underline;
+}
